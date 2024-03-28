@@ -1,11 +1,9 @@
-require './VMLoader.rb'
+require './Workfiles/vm_sorter.rb'
 
 class ExpensiveVirtualMachines # Отчет который выводит n самых дорогих ВМ
 
-    @@arr_vms = VirtualMachineLoader.new
-
     def self.Report(n)
-        result_arr = @@arr_vms.vmSortPrice.reverse
+        result_arr = VirtualMachineSorter.vmSortPrice.reverse
         puts "#{n} самых дорогих виртуальных машин:"
         n.times do |i|
             puts "id: #{result_arr[i].id}, full_price: #{result_arr[i].full_price}"
@@ -13,4 +11,3 @@ class ExpensiveVirtualMachines # Отчет который выводит n са
     end
 end
 
-ExpensiveVirtualMachines.Report(10)

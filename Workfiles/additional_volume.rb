@@ -1,6 +1,8 @@
+require 'csv'
+
 class AdditionalVolumes # Класс с помощью которого мы получаем дополнительные диски для каждой виртуальной машины
 
-    DATA = CSV.read('./volumes.csv') # Считываем дополнительные диски считаются они в формате [[id, type, volume]]
+    DATA = CSV.read('./data/volumes.csv') # Считываем дополнительные диски считаются они в формате [[id, type, volume]]
 
     def self.additionalVolumes(id)
         result = []
